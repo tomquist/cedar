@@ -67,15 +67,12 @@ describe(@"Spec", ^{
     });
 
     it(@"should be pending", PENDING);
-    it(@"should also be pending", nil);
     xit(@"should also be pending (xit)", ^{});
 
     describe(@"described specs should be pending", PENDING);
-    describe(@"described specs should also be pending", nil);
     xdescribe(@"xdescribed specs should be pending", ^{});
 
     context(@"contexted specs should be pending", PENDING);
-    context(@"contexted specs should also be pending", nil);
     xcontext(@"xcontexted specs should be pending", ^{});
 
     describe(@"empty describe blocks should be pending", ^{});
@@ -90,30 +87,6 @@ describe(@"The spec failure exception", ^{
 //    it(@"should throw exception", ^{
 //        [[NSException exceptionWithName:@"exception name" reason:@"exception reason" userInfo:nil] raise];
 //    });
-});
-
-describe(@"subjectAction", ^{
-    __block int value;
-
-    subjectAction(^{ value = 5; });
-
-    beforeEach(^{
-        value = 100;
-    });
-
-    it(@"should run after the beforeEach", ^{
-        value should equal(5);
-    });
-
-    describe(@"in a nested describe block", ^{
-        beforeEach(^{
-            value = 200;
-        });
-
-        it(@"should run after all the beforeEach blocks", ^{
-            value should equal(5);
-        });
-    });
 });
 
 describe(@"Matchers", ^{
@@ -159,23 +132,6 @@ describe(@"Matchers", ^{
         });
     });
 
-    describe(@"that fail outside of an `it` block", ^{
-        __block NSException *caughtException = nil;
-
-        @try {
-            describe(@"performing the assertion", ^{
-                1 should equal(2);
-            });
-        }
-        @catch (NSException *exception) {
-            caughtException = [exception retain];
-        }
-
-        it(@"should raise an exception with a helpful message", ^{
-            caughtException.name should equal(NSInternalInconsistencyException);
-            caughtException.reason should contain(@"Caught a spec failure before the specs began to run. Did you forget to put your assertion into an `it` block?. The failure was:");
-        });
-    });
 });
 
 describe(@"a describe block", ^{
@@ -184,7 +140,7 @@ describe(@"a describe block", ^{
     });
 
     describe(@"that contains a beforeEach in a shared example group", ^{
-        itShouldBehaveLike(@"a describe context that contains a beforeEach in a shared example group");
+        itShouldBehaveLike(@"a describe context that contains a beforeEach in a shared example group", ^(NSMutableDictionary *){});
 
         it(@"should not run the shared beforeEach before specs outside the shared example group", ^{
             expect(globalValue__).to(be_nil());
@@ -194,10 +150,11 @@ describe(@"a describe block", ^{
     describe(@"that passes a value to the shared example context", ^{
         beforeEach(^{
             globalValue__ = @"something";
-            [[CDRSpecHelper specHelper].sharedExampleContext setObject:globalValue__ forKey:@"value"];
         });
 
-        itShouldBehaveLike(@"a shared example group that receives a value in the context");
+        itShouldBehaveLike(@"a shared example group that receives a value in the context", ^(NSMutableDictionary *context) {
+            context[@"value"] = globalValue__;
+        });
     });
 
     describe(@"that passes a value in-line to the shared example context", ^{
@@ -210,12 +167,12 @@ describe(@"a describe block", ^{
         });
     });
 
-    itShouldBehaveLike(@"a shared example group that contains a failing spec");
+    itShouldBehaveLike(@"a shared example group that contains a failing spec", ^(NSMutableDictionary *) {});
 });
 
 describe(@"a describe block that tries to include a shared example group that doesn't exist", ^{
     @try {
-        itShouldBehaveLike(@"a unicorn");
+        itShouldBehaveLike(@"a unicorn", ^(NSMutableDictionary *) {});
     } @catch (NSException *) {
         return;
     }
@@ -229,7 +186,7 @@ SHARED_EXAMPLE_GROUPS_BEGIN(Specs)
 
 sharedExamplesFor(@"a describe context that contains a beforeEach in a shared example group", ^(NSDictionary *context) {
     beforeEach(^{
-        expect([[CDRSpecHelper specHelper].sharedExampleContext count]).to(equal(0));
+        expect(context.count).to(equal(0));
         globalValue__ = [NSString string];
     });
 

@@ -77,14 +77,20 @@ describe(@"CDRClassFake", ^{
 
         beforeEach(^{
             fake = fake_for([SimpleIncrementer class]);
-
-            [[CDRSpecHelper specHelper].sharedExampleContext setObject:fake forKey:@"double"];
         });
 
-        itShouldBehaveLike(@"a Cedar double");
-        itShouldBehaveLike(@"a Cedar double when used with ARC");
-        itShouldBehaveLike(@"a Cedar class fake");
-        itShouldBehaveLike(@"a Cedar ordinary fake");
+        itShouldBehaveLike(@"a Cedar double", ^(NSMutableDictionary *context){
+            context[@"double"] = fake;
+        });
+        itShouldBehaveLike(@"a Cedar double when used with ARC", ^(NSMutableDictionary *context){
+            context[@"double"] = fake;
+        });
+        itShouldBehaveLike(@"a Cedar class fake", ^(NSMutableDictionary *context){
+            context[@"double"] = fake;
+        });
+        itShouldBehaveLike(@"a Cedar ordinary fake", ^(NSMutableDictionary *context){
+            context[@"double"] = fake;
+        });
 
         context(@"when calling a method which has not been stubbed", ^{
             it(@"should raise an exception", ^{
@@ -98,14 +104,20 @@ describe(@"CDRClassFake", ^{
 
         beforeEach(^{
             niceFake = nice_fake_for([SimpleIncrementer class]);
-
-            [[CDRSpecHelper specHelper].sharedExampleContext setObject:niceFake forKey:@"double"];
         });
 
-        itShouldBehaveLike(@"a Cedar double");
-        itShouldBehaveLike(@"a Cedar double when used with ARC");
-        itShouldBehaveLike(@"a Cedar class fake");
-        itShouldBehaveLike(@"a Cedar nice fake");
+        itShouldBehaveLike(@"a Cedar double", ^(NSMutableDictionary *context){
+            context[@"double"] = niceFake;
+        });
+        itShouldBehaveLike(@"a Cedar double when used with ARC", ^(NSMutableDictionary *context){
+            context[@"double"] = niceFake;
+        });
+        itShouldBehaveLike(@"a Cedar class fake", ^(NSMutableDictionary *context){
+            context[@"double"] = niceFake;
+        });
+        itShouldBehaveLike(@"a Cedar nice fake", ^(NSMutableDictionary *context){
+            context[@"double"] = niceFake;
+        });
 
         context(@"when calling a method which has not been stubbed", ^{
             it(@"should allow method invocation without stubbing", ^{

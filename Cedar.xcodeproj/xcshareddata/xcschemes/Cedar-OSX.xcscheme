@@ -28,9 +28,23 @@
             buildForAnalyzing = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "AE248FA919DCD52500092C14"
-               BuildableName = "Cedar-OSX SpecBundle.xctest"
-               BlueprintName = "Cedar-OSX SpecBundle"
+               BlueprintIdentifier = "F8CDDE5121A4CE040096C744"
+               BuildableName = "Cedar-OSX FocusedSpecs.xctest"
+               BlueprintName = "Cedar-OSX FocusedSpecs"
+               ReferencedContainer = "container:Cedar.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "F8CDDE0E21A4CC380096C744"
+               BuildableName = "Cedar-OSX Specs.xctest"
+               BlueprintName = "Cedar-OSX Specs"
                ReferencedContainer = "container:Cedar.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -46,9 +60,19 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "AE248FA919DCD52500092C14"
-               BuildableName = "Cedar-OSX SpecBundle.xctest"
-               BlueprintName = "Cedar-OSX SpecBundle"
+               BlueprintIdentifier = "F8CDDE5121A4CE040096C744"
+               BuildableName = "Cedar-OSX FocusedSpecs.xctest"
+               BlueprintName = "Cedar-OSX FocusedSpecs"
+               ReferencedContainer = "container:Cedar.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "F8CDDE0E21A4CC380096C744"
+               BuildableName = "Cedar-OSX Specs.xctest"
+               BlueprintName = "Cedar-OSX Specs"
                ReferencedContainer = "container:Cedar.xcodeproj">
             </BuildableReference>
          </TestableReference>

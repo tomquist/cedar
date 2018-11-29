@@ -10,12 +10,12 @@ namespace Cedar { namespace Matchers { namespace Stringifiers {
         NSString * comma_and_newline_delimited_list(const Container & container) {
             NSMutableString *result = [NSMutableString string];
             bool first = true;
-            for (typename Container::const_iterator it = container.begin(); it != container.end(); ++it, first = false) {
+            for (typename Container::const_iterator i = container.begin(); i != container.end(); ++i, first = false) {
                 if (!first) {
                     [result appendString:@","];
                 }
 
-                NSString * string = string_for(*it);
+                NSString * string = string_for(*i);
                 [result appendString:[NSString stringWithFormat:@"\n    %@", string]];
             }
             return result;
@@ -32,9 +32,9 @@ namespace Cedar { namespace Matchers { namespace Stringifiers {
     NSString * string_for(const typename std::map<T, U> & container) {
         NSMutableString *result = [NSMutableString stringWithString:@"{"];
 
-        for (typename std::map<T, U>::const_iterator it = container.begin(); it != container.end(); ++it) {
-            NSString * keyString = string_for(it->first);
-            NSString * valueString = string_for(it->second);
+        for (typename std::map<T, U>::const_iterator i = container.begin(); i != container.end(); ++i) {
+            NSString * keyString = string_for(i->first);
+            NSString * valueString = string_for(i->second);
             [result appendString:[NSString stringWithFormat:@"\n    %@ = %@;", keyString, valueString]];
         }
         [result appendString:@"\n}"];

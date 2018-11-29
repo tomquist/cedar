@@ -145,13 +145,6 @@ describe(@"CDRSpecFailure", ^{
         __block NSError *error;
         __block id raisedObject;
 
-        subjectAction(^{
-            CDRSpecFailure *failure =
-                [CDRSpecFailure specFailureWithRaisedObject:raisedObject];
-            error = nil;
-            symbols = [failure callStackSymbolicatedSymbols:&error];
-        });
-
         context(@"when raised object provides call stack return addresses", ^{
             void (^objectRaiser)(void) = ^{ [[NSException exceptionWithName:@"name" reason:@"reason" userInfo:nil] raise]; };
 
@@ -163,10 +156,21 @@ describe(@"CDRSpecFailure", ^{
                 } @catch (NSException *e) {
                     raisedObject = e;
                 }
+                CDRSpecFailure *failure =
+                [CDRSpecFailure specFailureWithRaisedObject:raisedObject];
+                error = nil;
+                symbols = [failure callStackSymbolicatedSymbols:&error];
             });
 
 #if !CDR_SYMBOLICATION_AVAILABLE
             context(@"when symbolication is not available (devices)", ^{
+                beforeEach({
+                    CDRSpecFailure *failure =
+                    [CDRSpecFailure specFailureWithRaisedObject:raisedObject];
+                    error = nil;
+                    symbols = [failure callStackSymbolicatedSymbols:&error];
+                });
+
                 it(@"returns nil", ^{
                     symbols should be_nil;
                 });
@@ -184,8 +188,8 @@ describe(@"CDRSpecFailure", ^{
                     it(@"returns string with symbolicated call stack "
                         "showing originating error location closest to the top", ^{
                          symbols should contain(
-                            @"  *CDRSpecFailureSpec.mm:156\n"
-                             "  *CDRSpecFailureSpec.mm:162\n"
+                            @"  *CDRSpecFailureSpec.mm:149\n"
+                             "  *CDRSpecFailureSpec.mm:155\n"
                         );
                     });
 
@@ -214,6 +218,11 @@ describe(@"CDRSpecFailure", ^{
                         NSArray *addresses = [NSArray arrayWithObject:badAddress];
                         spy_on(raisedObject);
                         raisedObject stub_method("callStackReturnAddresses").and_return(addresses);
+
+                        CDRSpecFailure *failure =
+                        [CDRSpecFailure specFailureWithRaisedObject:raisedObject];
+                        error = nil;
+                        symbols = [failure callStackSymbolicatedSymbols:&error];
                     });
 
                     it(@"returns nil", ^{
@@ -229,14 +238,6 @@ describe(@"CDRSpecFailure", ^{
                 });
             });
 #endif
-        });
-
-        context(@"when raised object does not provide call stack return addresses", ^{
-            beforeEach(^{ raisedObject = @"failure"; });
-
-            it(@"returns nil", ^{
-                symbols should be_nil;
-            });
         });
     });
 });

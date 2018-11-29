@@ -23,7 +23,7 @@ typedef LargeIncrementerStruct (^ComplexIncrementerBlock)(NSNumber *, LargeIncre
 - (void)incrementByInteger:(NSUInteger)number;
 - (void)incrementByABit:(unsigned int)aBit andABitMore:(NSNumber *)aBitMore;
 - (void)incrementWithException;
-- (void)methodWithBlock:(void(^)())blockArgument;
+- (void)methodWithBlock:(void(^)(void))blockArgument;
 - (void)methodWithCString:(char *)string;
 - (id)methodWithInheritedProtocol:(id<InheritedProtocol>)protocol;
 - (NSString *)methodWithString:(NSString *)string;

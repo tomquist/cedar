@@ -1,4 +1,4 @@
-#import "CDRSpecHelper.h"
+#import "CDRSpecDSL.h"
 
 SPEC_BEGIN(SpecSpec2)
 

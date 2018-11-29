@@ -24,8 +24,6 @@ describe(@"spy_on", ^{
     beforeEach(^{
         incrementer = [[[SimpleIncrementer alloc] init] autorelease];
         spy_on(incrementer);
-
-        [[CDRSpecHelper specHelper].sharedExampleContext setObject:incrementer forKey:@"double"];
     });
 
     describe(@"method stubbing", ^{
@@ -122,8 +120,12 @@ describe(@"spy_on", ^{
         });
     });
 
-    itShouldBehaveLike(@"a Cedar double");
-    itShouldBehaveLike(@"a Cedar double when used with ARC");
+    itShouldBehaveLike(@"a Cedar double", ^(NSMutableDictionary *context) {
+        context[@"double"] = incrementer;
+    });
+    itShouldBehaveLike(@"a Cedar double when used with ARC", ^(NSMutableDictionary *context) {
+        context[@"double"] = incrementer;
+    });
 
     it(@"should blow up in an obvious manner when spying on nil", ^{
 #pragma clang diagnostic push

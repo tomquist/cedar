@@ -1,6 +1,6 @@
 #import <Foundation/Foundation.h>
 #import "CDRNullabilityCompat.h"
-#import "CDRExampleBase.h"
+#import "CDRSpecDSL.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

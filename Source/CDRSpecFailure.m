@@ -1,6 +1,7 @@
 #import "CDRSpecFailure.h"
 #import "CDRSymbolicator.h"
 #import <regex.h>
+#import <Nimble/Nimble.h>
 
 @interface CDRSpecFailure ()
 + (void)extractReason:(NSString **)reason fileName:(NSString **)fileName lineNumber:(int *)lineNumber fromObject:(NSObject *)object;

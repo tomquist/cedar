@@ -28,9 +28,23 @@
             buildForAnalyzing = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "1F45A3C8180E4796003C1E36"
-               BuildableName = "Cedar-iOS SpecBundle.xctest"
-               BlueprintName = "Cedar-iOS SpecBundle"
+               BlueprintIdentifier = "F8CDDD1421A4C6BE0096C744"
+               BuildableName = "Cedar-iOS FocusedSpecs.xctest"
+               BlueprintName = "Cedar-iOS FocusedSpecs"
+               ReferencedContainer = "container:Cedar.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "F8CDDCBA21A4AD2A0096C744"
+               BuildableName = "Cedar-iOS Specs.xctest"
+               BlueprintName = "Cedar-iOS Specs"
                ReferencedContainer = "container:Cedar.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -40,16 +54,25 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      language = ""
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
          <TestableReference
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "1F45A3C8180E4796003C1E36"
-               BuildableName = "Cedar-iOS SpecBundle.xctest"
-               BlueprintName = "Cedar-iOS SpecBundle"
+               BlueprintIdentifier = "F8CDDD1421A4C6BE0096C744"
+               BuildableName = "Cedar-iOS FocusedSpecs.xctest"
+               BlueprintName = "Cedar-iOS FocusedSpecs"
+               ReferencedContainer = "container:Cedar.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "F8CDDCBA21A4AD2A0096C744"
+               BuildableName = "Cedar-iOS Specs.xctest"
+               BlueprintName = "Cedar-iOS Specs"
                ReferencedContainer = "container:Cedar.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -70,7 +93,6 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      language = ""
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
       ignoresPersistentStateOnLaunch = "NO"

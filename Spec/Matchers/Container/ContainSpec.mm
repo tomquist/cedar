@@ -386,59 +386,115 @@ describe(@"contain matcher", ^{
     });
 
     describe(@"when the container is an NSArray", ^{
-        beforeEach(^{
-            [[CDRSpecHelper specHelper].sharedExampleContext setObject:[NSArray arrayWithObject:elementCopy] forKey:@"container"];
-            [[CDRSpecHelper specHelper].sharedExampleContext setObject:[NSArray array] forKey:@"container_empty"];
-            [[CDRSpecHelper specHelper].sharedExampleContext setObject:[NSArray arrayWithObject:[NSArray arrayWithObject:elementCopy]] forKey:@"container_nested"];
+        itShouldBehaveLike(@"nil container", ^(NSMutableDictionary *context) {
+            context[@"container"] = [NSArray arrayWithObject:elementCopy];
+            context[@"container_empty"] = [NSArray array];
+            context[@"container_nested"] = [NSArray arrayWithObject:[NSArray arrayWithObject:elementCopy]];
         });
-
-        itShouldBehaveLike(@"nil container");
-        itShouldBehaveLike(@"containing the element");
-        itShouldBehaveLike(@"not containing the element");
-        itShouldBehaveLike(@"containing the element nested");
-        itShouldBehaveLike(@"matching based on object class");
+        itShouldBehaveLike(@"containing the element", ^(NSMutableDictionary *context) {
+            context[@"container"] = [NSArray arrayWithObject:elementCopy];
+            context[@"container_empty"] = [NSArray array];
+            context[@"container_nested"] = [NSArray arrayWithObject:[NSArray arrayWithObject:elementCopy]];
+        });
+        itShouldBehaveLike(@"not containing the element", ^(NSMutableDictionary *context) {
+            context[@"container"] = [NSArray arrayWithObject:elementCopy];
+            context[@"container_empty"] = [NSArray array];
+            context[@"container_nested"] = [NSArray arrayWithObject:[NSArray arrayWithObject:elementCopy]];
+        });
+        itShouldBehaveLike(@"containing the element nested", ^(NSMutableDictionary *context) {
+            context[@"container"] = [NSArray arrayWithObject:elementCopy];
+            context[@"container_empty"] = [NSArray array];
+            context[@"container_nested"] = [NSArray arrayWithObject:[NSArray arrayWithObject:elementCopy]];
+        });
+        itShouldBehaveLike(@"matching based on object class", ^(NSMutableDictionary *context) {
+            context[@"container"] = [NSArray arrayWithObject:elementCopy];
+            context[@"container_empty"] = [NSArray array];
+            context[@"container_nested"] = [NSArray arrayWithObject:[NSArray arrayWithObject:elementCopy]];
+        });
     });
 
     describe(@"when the container is an NSMutableArray", ^{
-        beforeEach(^{
-            [[CDRSpecHelper specHelper].sharedExampleContext setObject:[NSMutableArray arrayWithObject:elementCopy] forKey:@"container"];
-            [[CDRSpecHelper specHelper].sharedExampleContext setObject:[NSMutableArray array] forKey:@"container_empty"];
-            [[CDRSpecHelper specHelper].sharedExampleContext setObject:[NSMutableArray arrayWithObject:[NSMutableArray arrayWithObject:elementCopy]] forKey:@"container_nested"];
+        itShouldBehaveLike(@"nil container", ^(NSMutableDictionary *context) {
+            context[@"container"] = [NSMutableArray arrayWithObject:elementCopy];
+            context[@"container_empty"] = [NSMutableArray array];
+            context[@"container_nested"] = [NSMutableArray arrayWithObject:[NSMutableArray arrayWithObject:elementCopy]];
         });
-
-        itShouldBehaveLike(@"nil container");
-        itShouldBehaveLike(@"containing the element");
-        itShouldBehaveLike(@"not containing the element");
-        itShouldBehaveLike(@"containing the element nested");
-        itShouldBehaveLike(@"matching based on object class");
+        itShouldBehaveLike(@"containing the element", ^(NSMutableDictionary *context) {
+            context[@"container"] = [NSMutableArray arrayWithObject:elementCopy];
+            context[@"container_empty"] = [NSMutableArray array];
+            context[@"container_nested"] = [NSMutableArray arrayWithObject:[NSMutableArray arrayWithObject:elementCopy]];
+        });
+        itShouldBehaveLike(@"not containing the element", ^(NSMutableDictionary *context) {
+            context[@"container"] = [NSMutableArray arrayWithObject:elementCopy];
+            context[@"container_empty"] = [NSMutableArray array];
+            context[@"container_nested"] = [NSMutableArray arrayWithObject:[NSMutableArray arrayWithObject:elementCopy]];
+        });
+        itShouldBehaveLike(@"containing the element nested", ^(NSMutableDictionary *context) {
+            context[@"container"] = [NSMutableArray arrayWithObject:elementCopy];
+            context[@"container_empty"] = [NSMutableArray array];
+            context[@"container_nested"] = [NSMutableArray arrayWithObject:[NSMutableArray arrayWithObject:elementCopy]];
+        });
+        itShouldBehaveLike(@"matching based on object class", ^(NSMutableDictionary *context) {
+            context[@"container"] = [NSMutableArray arrayWithObject:elementCopy];
+            context[@"container_empty"] = [NSMutableArray array];
+            context[@"container_nested"] = [NSMutableArray arrayWithObject:[NSMutableArray arrayWithObject:elementCopy]];
+        });
     });
 
     describe(@"when the container is an NSSet", ^{
-        beforeEach(^{
-            [[CDRSpecHelper specHelper].sharedExampleContext setObject:[NSSet setWithObject:elementCopy] forKey:@"container"];
-            [[CDRSpecHelper specHelper].sharedExampleContext setObject:[NSSet set] forKey:@"container_empty"];
-            [[CDRSpecHelper specHelper].sharedExampleContext setObject:[NSSet setWithObject:[NSSet setWithObject:elementCopy]] forKey:@"container_nested"];
+        itShouldBehaveLike(@"nil container", ^(NSMutableDictionary *context) {
+            context[@"container"] = [NSSet setWithObject:elementCopy];
+            context[@"container_empty"] = [NSSet set];
+            context[@"container_nested"] = [NSSet setWithObject:[NSSet setWithObject:elementCopy]];
         });
-
-        itShouldBehaveLike(@"nil container");
-        itShouldBehaveLike(@"containing the element");
-        itShouldBehaveLike(@"not containing the element");
-        itShouldBehaveLike(@"containing the element nested");
-        itShouldBehaveLike(@"matching based on object class");
+        itShouldBehaveLike(@"containing the element", ^(NSMutableDictionary *context) {
+            context[@"container"] = [NSSet setWithObject:elementCopy];
+            context[@"container_empty"] = [NSSet set];
+            context[@"container_nested"] = [NSSet setWithObject:[NSSet setWithObject:elementCopy]];
+        });
+        itShouldBehaveLike(@"not containing the element", ^(NSMutableDictionary *context) {
+            context[@"container"] = [NSSet setWithObject:elementCopy];
+            context[@"container_empty"] = [NSSet set];
+            context[@"container_nested"] = [NSSet setWithObject:[NSSet setWithObject:elementCopy]];
+        });
+        itShouldBehaveLike(@"containing the element nested", ^(NSMutableDictionary *context) {
+            context[@"container"] = [NSSet setWithObject:elementCopy];
+            context[@"container_empty"] = [NSSet set];
+            context[@"container_nested"] = [NSSet setWithObject:[NSSet setWithObject:elementCopy]];
+        });
+        itShouldBehaveLike(@"matching based on object class", ^(NSMutableDictionary *context) {
+            context[@"container"] = [NSSet setWithObject:elementCopy];
+            context[@"container_empty"] = [NSSet set];
+            context[@"container_nested"] = [NSSet setWithObject:[NSSet setWithObject:elementCopy]];
+        });
     });
 
     describe(@"when the container is an NSMutableSet", ^{
-        beforeEach(^{
-            [[CDRSpecHelper specHelper].sharedExampleContext setObject:[NSMutableSet setWithObject:elementCopy] forKey:@"container"];
-            [[CDRSpecHelper specHelper].sharedExampleContext setObject:[NSMutableSet set] forKey:@"container_empty"];
-            [[CDRSpecHelper specHelper].sharedExampleContext setObject:[NSMutableSet setWithObject:[NSSet setWithObject:elementCopy]] forKey:@"container_nested"];
+        itShouldBehaveLike(@"nil container", ^(NSMutableDictionary *context) {
+            context[@"container"] = [NSMutableSet setWithObject:elementCopy];
+            context[@"container_empty"] = [NSMutableSet set];
+            context[@"container_nested"] = [NSMutableSet setWithObject:[NSSet setWithObject:elementCopy]];
         });
-
-        itShouldBehaveLike(@"nil container");
-        itShouldBehaveLike(@"containing the element");
-        itShouldBehaveLike(@"not containing the element");
-        itShouldBehaveLike(@"containing the element nested");
-        itShouldBehaveLike(@"matching based on object class");
+        itShouldBehaveLike(@"containing the element", ^(NSMutableDictionary *context) {
+            context[@"container"] = [NSMutableSet setWithObject:elementCopy];
+            context[@"container_empty"] = [NSMutableSet set];
+            context[@"container_nested"] = [NSMutableSet setWithObject:[NSSet setWithObject:elementCopy]];
+        });
+        itShouldBehaveLike(@"not containing the element", ^(NSMutableDictionary *context) {
+            context[@"container"] = [NSMutableSet setWithObject:elementCopy];
+            context[@"container_empty"] = [NSMutableSet set];
+            context[@"container_nested"] = [NSMutableSet setWithObject:[NSSet setWithObject:elementCopy]];
+        });
+        itShouldBehaveLike(@"containing the element nested", ^(NSMutableDictionary *context) {
+            context[@"container"] = [NSMutableSet setWithObject:elementCopy];
+            context[@"container_empty"] = [NSMutableSet set];
+            context[@"container_nested"] = [NSMutableSet setWithObject:[NSSet setWithObject:elementCopy]];
+        });
+        itShouldBehaveLike(@"matching based on object class", ^(NSMutableDictionary *context) {
+            context[@"container"] = [NSMutableSet setWithObject:elementCopy];
+            context[@"container_empty"] = [NSMutableSet set];
+            context[@"container_nested"] = [NSMutableSet setWithObject:[NSSet setWithObject:elementCopy]];
+        });
     });
 
     describe(@"when the container is an NSDictionary", ^{

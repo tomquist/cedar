@@ -64,14 +64,20 @@ describe(@"fake (protocol)", ^{
 
         beforeEach(^{
             fake = fake_for(@protocol(SimpleIncrementer));
-
-            [[CDRSpecHelper specHelper].sharedExampleContext setObject:fake forKey:@"double"];
         });
 
-        itShouldBehaveLike(@"a Cedar double");
-        itShouldBehaveLike(@"a Cedar double when used with ARC");
-        itShouldBehaveLike(@"a Cedar protocol fake");
-        itShouldBehaveLike(@"a Cedar ordinary fake");
+        itShouldBehaveLike(@"a Cedar double", ^(NSMutableDictionary *context){
+            context[@"double"] = fake;
+        });
+        itShouldBehaveLike(@"a Cedar double when used with ARC", ^(NSMutableDictionary *context){
+            context[@"double"] = fake;
+        });
+        itShouldBehaveLike(@"a Cedar protocol fake", ^(NSMutableDictionary *context){
+            context[@"double"] = fake;
+        });
+        itShouldBehaveLike(@"a Cedar ordinary fake", ^(NSMutableDictionary *context){
+            context[@"double"] = fake;
+        });
 
         context(@"when calling a method which has not been stubbed", ^{
             it(@"should raise an exception", ^{
@@ -117,14 +123,20 @@ describe(@"fake (protocol)", ^{
 
         beforeEach(^{
             nice_fake = nice_fake_for(@protocol(SimpleIncrementer));
-
-            [[CDRSpecHelper specHelper].sharedExampleContext setObject:nice_fake forKey:@"double"];
         });
 
-        itShouldBehaveLike(@"a Cedar double");
-        itShouldBehaveLike(@"a Cedar double when used with ARC");
-        itShouldBehaveLike(@"a Cedar protocol fake");
-        itShouldBehaveLike(@"a Cedar nice fake");
+        itShouldBehaveLike(@"a Cedar double", ^(NSMutableDictionary *context){
+            context[@"double"] = nice_fake;
+        });
+        itShouldBehaveLike(@"a Cedar double when used with ARC", ^(NSMutableDictionary *context){
+            context[@"double"] = nice_fake;
+        });
+        itShouldBehaveLike(@"a Cedar protocol fake", ^(NSMutableDictionary *context){
+            context[@"double"] = nice_fake;
+        });
+        itShouldBehaveLike(@"a Cedar nice fake", ^(NSMutableDictionary *context){
+            context[@"double"] = nice_fake;
+        });
 
         describe(@"-description", ^{
             it(@"should return the description of the faked protocol", ^{
@@ -171,14 +183,20 @@ describe(@"fake (protocol)", ^{
 
         beforeEach(^{
             fake = fake_for(@protocol(SimpleIncrementer), @protocol(SimpleMultiplier));
-
-            [[CDRSpecHelper specHelper].sharedExampleContext setObject:fake forKey:@"double"];
         });
 
-        itShouldBehaveLike(@"a Cedar double");
-        itShouldBehaveLike(@"a Cedar double when used with ARC");
-        itShouldBehaveLike(@"a Cedar protocol fake");
-        itShouldBehaveLike(@"a Cedar ordinary fake");
+        itShouldBehaveLike(@"a Cedar double", ^(NSMutableDictionary *context){
+            context[@"double"] = fake;
+        });
+        itShouldBehaveLike(@"a Cedar double when used with ARC", ^(NSMutableDictionary *context){
+            context[@"double"] = fake;
+        });
+        itShouldBehaveLike(@"a Cedar protocol fake", ^(NSMutableDictionary *context){
+            context[@"double"] = fake;
+        });
+        itShouldBehaveLike(@"a Cedar ordinary fake", ^(NSMutableDictionary *context){
+            context[@"double"] = fake;
+        });
 
         it(@"should respond to methods from both protocols", ^{
             fake should respond_to(@selector(incrementBy:));
@@ -222,14 +240,20 @@ describe(@"fake (protocol)", ^{
 
         beforeEach(^{
             nice_fake = nice_fake_for(@protocol(SimpleIncrementer), @protocol(SimpleMultiplier));
-
-            [[CDRSpecHelper specHelper].sharedExampleContext setObject:nice_fake forKey:@"double"];
         });
 
-        itShouldBehaveLike(@"a Cedar double");
-        itShouldBehaveLike(@"a Cedar double when used with ARC");
-        itShouldBehaveLike(@"a Cedar protocol fake");
-        itShouldBehaveLike(@"a Cedar nice fake");
+        itShouldBehaveLike(@"a Cedar double", ^(NSMutableDictionary *context){
+            context[@"double"] = nice_fake;
+        });
+        itShouldBehaveLike(@"a Cedar double when used with ARC", ^(NSMutableDictionary *context){
+            context[@"double"] = nice_fake;
+        });
+        itShouldBehaveLike(@"a Cedar protocol fake", ^(NSMutableDictionary *context){
+            context[@"double"] = nice_fake;
+        });
+        itShouldBehaveLike(@"a Cedar nice fake", ^(NSMutableDictionary *context){
+            context[@"double"] = nice_fake;
+        });
 
         it(@"should respond to methods from both protocols", ^{
             nice_fake should respond_to(@selector(incrementBy:));

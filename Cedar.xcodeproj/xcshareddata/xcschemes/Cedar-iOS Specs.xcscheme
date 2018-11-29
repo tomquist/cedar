@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0720"
+   LastUpgradeVersion = "1010"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,37 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "34D7C3C91BB9747400E8E523"
-               BuildableName = "Cedar.framework"
-               BlueprintName = "Cedar-tvOS"
-               ReferencedContainer = "container:Cedar.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "NO"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
-            buildForAnalyzing = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "F8CDDDB021A4CAD40096C744"
-               BuildableName = "Cedar-tvOS FocusedSpecs.xctest"
-               BlueprintName = "Cedar-tvOS FocusedSpecs"
-               ReferencedContainer = "container:Cedar.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "NO"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
-            buildForAnalyzing = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "F8CDDD6621A4C7860096C744"
-               BuildableName = "Cedar-tvOS Specs.xctest"
-               BlueprintName = "Cedar-tvOS Specs"
+               BlueprintIdentifier = "F8CDDCBA21A4AD2A0096C744"
+               BuildableName = "Cedar-iOS Specs.xctest"
+               BlueprintName = "Cedar-iOS Specs"
                ReferencedContainer = "container:Cedar.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -60,19 +32,9 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "F8CDDDB021A4CAD40096C744"
-               BuildableName = "Cedar-tvOS FocusedSpecs.xctest"
-               BlueprintName = "Cedar-tvOS FocusedSpecs"
-               ReferencedContainer = "container:Cedar.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "F8CDDD6621A4C7860096C744"
-               BuildableName = "Cedar-tvOS Specs.xctest"
-               BlueprintName = "Cedar-tvOS Specs"
+               BlueprintIdentifier = "F8CDDCBA21A4AD2A0096C744"
+               BuildableName = "Cedar-iOS Specs.xctest"
+               BlueprintName = "Cedar-iOS Specs"
                ReferencedContainer = "container:Cedar.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -80,9 +42,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "34D7C3C91BB9747400E8E523"
-            BuildableName = "Cedar.framework"
-            BlueprintName = "Cedar-tvOS"
+            BlueprintIdentifier = "F8CDDCBA21A4AD2A0096C744"
+            BuildableName = "Cedar-iOS Specs.xctest"
+            BlueprintName = "Cedar-iOS Specs"
             ReferencedContainer = "container:Cedar.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -99,15 +61,16 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <MacroExpansion>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "34D7C3C91BB9747400E8E523"
-            BuildableName = "Cedar.framework"
-            BlueprintName = "Cedar-tvOS"
+            BlueprintIdentifier = "F8CDDCBA21A4AD2A0096C744"
+            BuildableName = "Cedar-iOS Specs.xctest"
+            BlueprintName = "Cedar-iOS Specs"
             ReferencedContainer = "container:Cedar.xcodeproj">
          </BuildableReference>
-      </MacroExpansion>
+      </BuildableProductRunnable>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -117,15 +80,16 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <MacroExpansion>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "34D7C3C91BB9747400E8E523"
-            BuildableName = "Cedar.framework"
-            BlueprintName = "Cedar-tvOS"
+            BlueprintIdentifier = "F8CDDCBA21A4AD2A0096C744"
+            BuildableName = "Cedar-iOS Specs.xctest"
+            BlueprintName = "Cedar-iOS Specs"
             ReferencedContainer = "container:Cedar.xcodeproj">
          </BuildableReference>
-      </MacroExpansion>
+      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
