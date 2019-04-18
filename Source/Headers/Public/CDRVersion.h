@@ -1,3 +1,3 @@
 #import <Foundation/Foundation.h>
 
-static NSString *CDRVersion = @"2.0";
+static NSString *CDRVersion = @"2.1.0";
