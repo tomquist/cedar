@@ -1881,6 +1881,7 @@
 					};
 					F8CDDE0E21A4CC380096C744 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 						ProvisioningStyle = Automatic;
 					};
 					F8CDDE5121A4CE040096C744 = {
@@ -1890,15 +1891,14 @@
 			};
 			buildConfigurationList = AEEE1FA911DC26EA00029872 /* Build configuration list for PBXProject "Cedar" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				English,
-				Japanese,
-				French,
-				German,
 				en,
 				Base,
+				ja,
+				de,
+				fr,
 			);
 			mainGroup = AEEE1FA411DC26EA00029872;
 			productRefGroup = AEEE1FB711DC271300029872 /* Products */;
@@ -3168,6 +3168,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "Cedar_Specs-Swift.h";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -3217,6 +3218,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "Cedar_Specs-Swift.h";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
